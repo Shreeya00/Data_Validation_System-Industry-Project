@@ -29,7 +29,7 @@ LayerTechnologiesAI / LLMOLLAMA, LangGraph, ChromaDB (RAG)BackendPython, MySQL /
                      │
 ┌────────────────────▼─────────────────────────────────┐
 │             Enterprise AI Platform                   │
-│   LangGraph Agent · LLM (OLLAMA) · RAG (ChromaDB)    │
+│   LangGraph Agent · LLM (OLLAMA) · RAG (ChromaDB)   │
 │   ML Pipeline (Phase 2)                              │
 └────────────────────┬─────────────────────────────────┘
                      │
