@@ -15,6 +15,7 @@ DataCompare AI eliminates the manual effort of comparing datasets by using LLM-b
 LayerTechnologiesAI / LLMOLLAMA, LangGraph, ChromaDB (RAG)BackendPython, MySQL / PostgreSQL, RedisML PipelineK-means, DBSCAN, IQR / Z-score outlier detectionExportPDF generator, Excel writer, ZIP packagerStorageFile system (hierarchical), ChromaDB vectors
 
 **Architecture**
+
 ┌──────────────────────────────────────────────────────┐
 │                  User Interface Layer                │
 │     Upload · View Results · Export · History         │
@@ -28,7 +29,7 @@ LayerTechnologiesAI / LLMOLLAMA, LangGraph, ChromaDB (RAG)BackendPython, MySQL /
                      │
 ┌────────────────────▼─────────────────────────────────┐
 │             Enterprise AI Platform                   │
-│   LangGraph Agent · LLM (OLLAMA) · RAG (ChromaDB)   │
+│   LangGraph Agent · LLM (OLLAMA) · RAG (ChromaDB)    │
 │   ML Pipeline (Phase 2)                              │
 └────────────────────┬─────────────────────────────────┘
                      │
