@@ -162,4 +162,60 @@ Week 12  ███████████████████████�
 
 ---
 
-> 💡 **Phase 2** will introduce advanced ML capabilities: K-means & DBSCAN clustering, IQR/Z-score anomaly detection, feature engineering, and trend forecasting.
+##  Phase 2 — Business Rule Validation
+ 
+Allows users to define plain-language business rules against their dataset. The system validates every row and flags violations — returning a clear **PASS** or **FAIL** result per rule.
+ 
+### How It Works
+ 
+```
+User defines a rule (natural language)
+        ↓
+System parses & maps rule to dataset columns
+        ↓
+Validates every row against the rule
+        ↓
+        ├── PASS — All rows satisfy the rule
+        └── FAIL — Returns violating rows with rule context
+```
+ 
+### Example
+ 
+**Rule entered by user:**
+```
+All products should be delivered.
+```
+ 
+**Result — Rule FAILED:**
+ 
+| Row | Product ID | Product Name   | Status      | Violation              |
+|-----|------------|----------------|-------------|------------------------|
+| 4   | P-1042     | Wireless Mouse | Pending     |  Not delivered        |
+| 9   | P-1087     | USB Hub        | In Transit  |  Not delivered        |
+| 15  | P-1093     | Keyboard       | Cancelled   |  Not delivered        |
+ 
+>  **Business Rule FAILED** — 3 of 15 rows violate the rule: `All products should be delivered`
+ 
+**Result — Rule PASSED:**
+>  **Business Rule PASSED** — All 15 rows satisfy the rule: `All products should be delivered`
+ 
+---
+ 
+### Supported Rule Patterns
+ 
+| Rule Type | Example |
+|-----------|---------|
+| **Completeness** | `All orders must have a customer ID` |
+| **Status check** | `All products should be delivered` |
+| **Range / threshold** | `Invoice amount must be greater than 0` |
+| **Uniqueness** | `No duplicate order IDs should exist` |
+| **Conditional** | `If order status is Shipped, tracking ID must not be empty` |
+ 
+### Key Capabilities
+ 
+-  **Natural language input** — users write rules in plain English, no query language needed
+-  **Row-level violation detection** — pinpoints exactly which rows fail and why
+-  **Compilation report** — downloadable list of all violating rows with rule context
+-  **Pass / Fail badge** — instant visual verdict per rule
+-  **Multi-rule support** — run multiple rules in a single validation pass
+-  **Export violations** — download failing rows as CSV / Excel for follow-up
